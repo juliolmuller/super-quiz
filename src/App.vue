@@ -5,7 +5,7 @@
     </header>
     <div class="wrapper">
       <main id="app-main">
-        <!-- content -->
+        <Question :question="currQuestion" @response="checkResponse" />
       </main>
     </div>
     <footer id="app-footer">
@@ -15,7 +15,27 @@
 </template>
 
 <script>
-export default {}
+import Question from './components/Question.vue'
+import questions from './util/questions'
+
+export default {
+
+  components: {
+    Question,
+  },
+
+  data() {
+    return {
+      currQuestion: questions[0],
+    }
+  },
+
+  methods: {
+    checkResponse(isCorrect) {
+      alert(`Resposta correta? ${isCorrect}`)
+    },
+  },
+}
 </script>
 
 <style>
@@ -62,6 +82,9 @@ html, body, #app {
 }
 
 #app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;

@@ -1,53 +1,84 @@
 <template>
-  <div class="question"></div>
+  <div class="question">
+    <span>{{ question.text }}</span>
+    <div class="answers">
+      <div class="answer" v-for="(answer, index) in question.answers" :key="index" @click="$emit('response', answer.correct)">
+        <span class="alternative">{{ alternatives[index] }}</span>
+        <span class="text">{{ answer.text }}</span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+
+  data() {
+    return {
+      alternatives: ['a', 'b', 'c', 'd'],
+    }
+  },
+
+  props: {
+    question: {
+      type: Object,
+      required: true,
+    },
+  },
+}
 </script>
 
-<style>
+<style scoped>
 .question {
-  height: 400px;
-  color: #000;
-  background-color: #fff;
-  width: 70%;
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
   border-radius: 20px;
+  background-color: #fff;
+  color: #000;
   font-size: 2.5rem;
+}
 
+.question > span {
+  display: block;
+  margin: 1rem 2rem 2rem;
+  color: black;
+}
+
+.answers {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-ul.answers {
-  font-size: 2rem;
-  padding: 0;
+.answer {
+  flex-basis: 90%;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.answers li {
-  margin: 20px;
-  background-color: #89c454;
+  margin: 0 1rem 2rem;
   border-radius: 8px;
-  width: 40%;
-
-  display: flex;
+  background: #396afc;
+  background: linear-gradient(to right, #517cfd, #2948ff);
+  font-size: 2rem;
 }
 
-.answers .number {
-  padding: 10px;
-  background-color: #1e9c31;
-  color: #fff;
+.answer:hover, .answer:focus {
+  background: darkblue;
+  cursor: pointer;
+}
+
+.answers .alternative {
   flex-basis: 30px;
+  padding: 10px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  background-color: rgb(0, 0, 73);
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .answers .text {
-  flex: 1;
+  flex-grow: 1;
   align-self: center;
+  text-transform: uppercase;
 }
 </style>
