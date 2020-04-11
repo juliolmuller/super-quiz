@@ -1,21 +1,38 @@
 <template>
 	<div id="app">
-		<h1>Super Quiz</h1>
+    <header id="app-header">
+      <h1>Super Quiz</h1>
+    </header>
+    <div class="wrapper">
+      <main id="app-main">
+        <!-- content -->
+      </main>
+    </div>
+    <footer id="app-footer">
+      <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
+    </footer>
 	</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+	color: #FFF;
+  font-family: 'Oswald', sans-serif;
+}
+
 body {
 	background: linear-gradient(to right, rgb(0, 0, 70), rgb(28, 181, 224));
-	font-family: 'Oswald', sans-serif;
-	color: #FFF;
-	height: 100vh;
+}
+
+html, body, #app {
+  height: 100%;
 }
 
 #app {
@@ -28,9 +45,38 @@ body {
 	align-items: center;
 }
 
-#app h1 {
+#app-header {
+  flex-shrink: 0;
+}
+
+#app-header h1 {
+  padding: 2rem;
 	font-weight: 200;
 	font-size: 4rem;
+}
+
+.wrapper {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+}
+
+#app-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#app-footer {
+  flex-shrink: 0;
+}
+
+#app-footer span {
+  display: block;
+  padding: 2rem;
+  color: #aaa;
+  font-size: small;
 }
 
 @keyframes flip-out {
