@@ -5,8 +5,10 @@
     </header>
     <div class="wrapper">
       <main id="app-main">
-        <Result :correct="isCorrect" @next="getNextQuestion" v-if="isResponded" />
-        <Question :question="questions[currQuestion]" @response="displayResult" v-else />
+        <transition name="flip" mode="out-in">
+          <Result :correct="isCorrect" @next="getNextQuestion" v-if="isResponded" />
+          <Question :question="questions[currQuestion]" @response="displayResult" v-else />
+        </transition>
       </main>
     </div>
     <footer id="app-footer">
