@@ -5,7 +5,8 @@
     </header>
     <div class="wrapper">
       <main id="app-main">
-        <Question :question="currQuestion" @response="checkResponse" />
+        <Result :correct="isCorrect" @next="getNextQuestion" v-if="isResponded" />
+        <Question :question="questions[currQuestion]" @response="displayResult" v-else />
       </main>
     </div>
     <footer id="app-footer">
@@ -16,23 +17,33 @@
 
 <script>
 import Question from './components/Question.vue'
+import Result from './components/Result.vue'
 import questions from './util/questions'
 
 export default {
 
   components: {
     Question,
+    Result,
   },
 
   data() {
     return {
-      currQuestion: questions[0],
+      questions: questions,
+      currQuestion: 0,
+      isCorrect: false,
+      isResponded: false,
     }
   },
 
   methods: {
-    checkResponse(isCorrect) {
-      alert(`Resposta correta? ${isCorrect}`)
+    displayResult(isCorrect) {
+      this.isCorrect = isCorrect
+      this.isResponded = true
+    },
+    getNextQuestion() {
+      this.currQuestion = (this.currQuestion + 1) % this.questions.length
+      this.isResponded = false
     },
   },
 }
@@ -56,13 +67,12 @@ html, body, #app {
 }
 
 #app {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
 }
 
 #app-header {
@@ -71,8 +81,8 @@ html, body, #app {
 
 #app-header h1 {
   padding: 2rem;
-	font-weight: 200;
 	font-size: 4rem;
+	font-weight: 200;
 }
 
 .wrapper {

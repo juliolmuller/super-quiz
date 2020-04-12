@@ -1,48 +1,66 @@
 <template>
-  <div class="result"></div>
+  <div class="result" :class="{ wrong: !correct }">
+    <div class="message">
+      <p class="icon">{{ correct ? '✔' : '❌' }}</p>
+      <p class="text" v-if="correct"> Resposta correta!</p>
+      <p class="text" v-else>Resposta errada</p>
+    </div>
+    <button :class="{ wrong: !correct }" @click="$emit('next')">
+      Próxima Pergunta &gt;
+    </button>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+
+  props: {
+    correct: {
+      type: Boolean,
+      required: true,
+    },
+  },
+}
 </script>
 
-<style>
+<style scoped>
 .result {
-  height: 400px;
-  color: #000;
-  background-color: #fff;
-  width: 70%;
-  border-radius: 20px;
-  font-size: 5.5rem;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #89c454;
-  color: #30863d;
-}
-
-.result hr {
-  color: #fff;
+  justify-content: space-around;
+  height: 550px;
+  width: 100%;
+  max-width: 640px;
+  width: 70%;
+  border-radius: 20px;
+  background-color: #118b11;
+  background-image: linear-gradient(to bottom, #065506, #118b11);
+  font-size: 5.5rem;
 }
 
 .result.wrong {
-  background-color: #f05250;
-  color: #bb2814;
+  background-color: #ED213A;
+  background: linear-gradient(to top, #93291E, #ED213A);
 }
 
 .result button {
-  outline: none;
   align-self: center;
-  padding: 10px 20px;
-  font-size: 1.7rem;
+  outline: none;
+  border: 0;
   border-radius: 8px;
   background-color: #fff;
-  color: #30863d;
+  padding: 10px 20px;
+  color: #065506;
+  font-size: 1.7rem;
   font-weight: 600;
 }
 
+.result button:hover, .result button:focus {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
 .result.wrong button {
-  color: #bb2814;
+  color: #93291E;
 }
 </style>

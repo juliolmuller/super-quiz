@@ -1,5 +1,5 @@
 <template>
-  <div class="question">
+  <div ref="card" class="question">
     <span>{{ question.text }}</span>
     <div class="answers">
       <div class="answer" v-for="(answer, index) in question.answers" :key="index" @click="$emit('response', answer.correct)">
@@ -15,7 +15,7 @@ export default {
 
   data() {
     return {
-      alternatives: ['a', 'b', 'c', 'd'],
+      alternatives: [...'abcdefghij'],
     }
   },
 
@@ -30,8 +30,9 @@ export default {
 
 <style scoped>
 .question {
+  min-height: 550px;
   width: 100%;
-  max-width: 600px;
+  max-width: 640px;
   padding: 1rem;
   border-radius: 20px;
   background-color: #fff;
