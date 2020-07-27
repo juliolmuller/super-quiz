@@ -38,6 +38,11 @@
       "parser": "babel-eslint"
     }
   },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
