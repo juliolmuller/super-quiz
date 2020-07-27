@@ -1,6 +1,6 @@
 {
   "name": "super-quiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Julio L. M",
     "url": "https://github.com/juliolmuller"
@@ -17,7 +17,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-service": "^4.3.1",
+    "@vue/cli-service": "^4.4.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
