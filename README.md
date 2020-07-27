@@ -4,8 +4,8 @@
 - **JavaScript developed by:** [Julio L. Muller](https://github.com/juliolmuller)
 - **HTML & CSS delivered by:** [Cod3r](https://www.cod3r.com.br/)
 - **Released on:** Apr 11, 2020
-- **Updated on:** Apr 11, 2020
-- **Latest version:** 1.0.0
+- **Updated on:** Jul 26, 2020
+- **Latest version:** 1.0.1
 - **License:** MIT
 
 ## Overview
@@ -20,7 +20,7 @@ Take a look at this application running [here](https://juliolmuller.github.io/su
 
 ## Project setup
 
-Run `npm install` to download all dependecnies and get the project set up.
+Run `npm install` to download all dependencies and get the project set up.
 
 ## Development server
 
