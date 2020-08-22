@@ -1,31 +1,45 @@
+<h1 align="center">
+  :heavy_check_mark: Super Quiz :x:
+</h1>
 
-# Super Quiz
-
-- **JavaScript developed by:** [Julio L. Muller](https://github.com/juliolmuller)
-- **HTML & CSS delivered by:** [Cod3r](https://www.cod3r.com.br/)
+- **Project proposed by:** [Cod3r](https://www.cod3r.com.br/)
+- **Project developed by:** [Julio L. Muller](https://github.com/juliolmuller)
 - **Released on:** Apr 11, 2020
-- **Updated on:** Jul 26, 2020
-- **Latest version:** 1.0.1
+- **Updated on:** Aug 22, 2020
+- **Latest version:** 1.0.2
 - **License:** MIT
 
-## Overview
+![Application snapshot](./src/assets/app-overview.jpg)
 
-Application developed to play Vue.js animations.
+Application developed during [Cod3r's official Vue.js course](https://www.udemy.com/course/vue-js-completo/), on Udemy, in order to create a funny and good-looking tool with Vue.js animations API (static data for the questions).
 
-![Application Overview](./app-overview.jpg)
+[Check out the application running!](https://juliolmuller.github.io/super-quiz/)
 
-## Run Application
+## :trophy: Lessons Learned
 
-Take a look at this application running [here](https://juliolmuller.github.io/super-quiz/).
+- Vue.js 2 animations and transitions API;
 
-## Project setup
+## :hammer: Technologies & Resources
 
-Run `npm install` to download all dependencies and get the project set up.
+**Frontend:**
+- Vue.js 2
 
-## Development server
+**Development:**
+- Visual Studio Code
+- Vue CLI & Node.js routines
 
-Run `npm run serve` for a dev server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
+## :zap: Features
 
-## Build
+- Display static list of questions to the user, with one correct option;
+- Display the result for the responded question;
+- Cool flipping animation on the components transition;
 
-Run `npm run build` to build the project. The build artifacts will be stored in the `docs/` directory.
+## :bell: Setting up the Environment
+
+Make sure to have **Node.js 10+** installed in your machine and its **npm** available in the command line, then use the following routines:
+
+```bash
+$ npm install   # Download dependencies
+$ npm run serve # Run development server
+$ npm run build # Build files for production
+```
