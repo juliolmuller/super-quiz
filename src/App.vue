@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+  <div id="app">
     <header id="app-header">
       <h1>Super Quiz</h1>
     </header>
@@ -14,7 +14,7 @@
     <footer id="app-footer">
       <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
     </footer>
-	</div>
+  </div>
 </template>
 
 <script>
@@ -29,14 +29,12 @@ export default {
     Result,
   },
 
-  data() {
-    return {
-      questions: questions,
-      currQuestion: 0,
-      isCorrect: false,
-      isResponded: false,
-    }
-  },
+  data: () => ({
+    questions,
+    currQuestion: 0,
+    isCorrect: false,
+    isResponded: false,
+  }),
 
   methods: {
     displayResult(isCorrect) {
@@ -56,12 +54,12 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-	color: #FFF;
+  color: #FFF;
   font-family: 'Oswald', sans-serif;
 }
 
 body {
-	background: linear-gradient(to right, rgb(0, 0, 70), rgb(28, 181, 224));
+  background: linear-gradient(to right, rgb(0, 0, 70), rgb(28, 181, 224));
 }
 
 html, body, #app {
@@ -69,12 +67,12 @@ html, body, #app {
 }
 
 #app {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 #app-header {
@@ -83,8 +81,8 @@ html, body, #app {
 
 #app-header h1 {
   padding: 2rem;
-	font-size: 4rem;
-	font-weight: 200;
+  font-size: 4rem;
+  font-weight: 200;
 }
 
 .wrapper {
@@ -115,20 +113,20 @@ html, body, #app {
 }
 
 @keyframes flip-out {
-	from { transform: rotateY(0deg); }
-	to { transform: rotateY(90deg); }
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(90deg); }
 }
 
 @keyframes flip-in {
-	from { transform: rotateY(90deg); }
-	to { transform: rotateY(0deg); }
+  from { transform: rotateY(90deg); }
+  to { transform: rotateY(0deg); }
 }
 
 .flip-enter-active {
-	animation: flip-in 0.3s ease;
+  animation: flip-in 0.3s ease;
 }
 
 .flip-leave-active {
-	animation: flip-out 0.3s ease;
+  animation: flip-out 0.3s ease;
 }
 </style>

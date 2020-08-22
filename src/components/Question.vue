@@ -2,7 +2,12 @@
   <div ref="card" class="question">
     <span>{{ question.text }}</span>
     <div class="answers">
-      <div class="answer" v-for="(answer, index) in question.answers" :key="index" @click="$emit('response', answer.correct)">
+      <div
+        class="answer"
+        v-for="(answer, index) in question.answers"
+        :key="index"
+        @click="$emit('response', answer.correct)"
+      >
         <span class="alternative">{{ alternatives[index] }}</span>
         <span class="text">{{ answer.text }}</span>
       </div>
@@ -13,11 +18,9 @@
 <script>
 export default {
 
-  data() {
-    return {
-      alternatives: [...'abcdefghij'],
-    }
-  },
+  data: () => ({
+    alternatives: [...'abcdefghij'],
+  }),
 
   props: {
     question: {
