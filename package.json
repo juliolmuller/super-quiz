@@ -1,28 +1,28 @@
 {
   "name": "super-quiz",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "license": "MIT",
   "author": {
     "name": "Julio L. M",
-    "url": "https://github.com/juliolmuller"
-  },
-  "repository": {
-    "url": "https://github.com/juliolmuller/super-quiz",
-    "type": "portfolio"
+    "url": "https://juliolmuller.github.io/"
   },
   "scripts": {
-    "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --dest docs",
+    "start": "vue-cli-service serve --open",
+    "build": "vue-cli-service build --dest docs --modern",
     "lint": "vue-cli-service lint"
   },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
   "devDependencies": {
-    "@lacussoft/eslint-config-standard": "^1.0.6",
-    "@vue/cli-plugin-babel": "^4.5.4",
-    "@vue/cli-plugin-eslint": "^4.5.4",
-    "@vue/cli-service": "^4.5.4",
+    "@lacussoft/eslint-config-standard": "^1.0.9",
+    "@vue/cli-plugin-babel": "^4.5.8",
+    "@vue/cli-plugin-eslint": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
     "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
-    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -42,17 +42,12 @@
   },
   "babel": {
     "presets": [
-      "@vue/app"
+      "@vue/cli-plugin-babel/preset"
     ]
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8"
+    "not dead"
   ]
 }
