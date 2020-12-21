@@ -29,7 +29,7 @@ Application developed during [Cod3r's official Vue.js course](https://www.udemy.
 
 ## :trophy: Lessons Learned
 
-- Vue.js 2 animations and transitions API;
+- Vue.js animations and transitions API;
 
 ## :rocket: Technologies & Resources
 
@@ -45,9 +45,9 @@ Application developed during [Cod3r's official Vue.js course](https://www.udemy.
 Make sure to have **Node.js 10+** installed in your machine and its **npm** available in the command line, then use the following routines:
 
 ```bash
-$ npm install   # Download dependencies
-$ npm start     # Run development server
-$ npm run build # Build files for production
+$ npm install     # Download dependencies
+$ npm start       # Run development server
+$ npm run build   # Build files for production
 ```
 
 ## :zap: Features Implementations
@@ -55,4 +55,4 @@ $ npm run build # Build files for production
 - [x] Display static list of questions to the user, with one correct option;
 - [x] Display the result for the responded question;
 - [x] Flipping animation on questions transition;
-- [ ] Upgrade to Vue 3 and use Composition API;
+- [x] Upgrade to Vue 3 and use Composition API;
