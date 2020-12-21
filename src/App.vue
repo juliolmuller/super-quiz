@@ -20,7 +20,7 @@
 <script>
 import Question from './components/Question.vue'
 import Result from './components/Result.vue'
-import questions from './util/questions'
+import data from './data.json'
 
 export default {
 
