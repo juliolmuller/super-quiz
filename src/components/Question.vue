@@ -16,11 +16,9 @@
 </template>
 
 <script>
-export default {
+import { ref } from 'vue'
 
-  data: () => ({
-    alternatives: [...'abcdefghij'],
-  }),
+export default {
 
   props: {
     question: {
@@ -28,6 +26,10 @@ export default {
       required: true,
     },
   },
+
+  setup: () => ({
+    alternatives: ref([...'abcdefghij']),
+  }),
 }
 </script>
 

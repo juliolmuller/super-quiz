@@ -1,23 +1,22 @@
 <template>
-  <div id="app">
-    <header id="app-header">
-      <h1>Super Quiz</h1>
-    </header>
-    <div class="wrapper">
-      <main id="app-main">
-        <transition name="flip" mode="out-in">
-          <Result :correct="isCorrect" @next="getNextQuestion" v-if="isResponded" />
-          <Question :question="questions[currQuestion]" @response="displayResult" v-else />
-        </transition>
-      </main>
-    </div>
-    <footer id="app-footer">
-      <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
-    </footer>
+  <header id="app-header">
+    <h1>Super Quiz</h1>
+  </header>
+  <div class="wrapper">
+    <main id="app-main">
+      <transition name="flip" mode="out-in">
+        <Result :correct="isCorrect" @next="getNextQuestion" v-if="isResponded" />
+        <Question :question="questions[currQuestion]" @response="displayResult" v-else />
+      </transition>
+    </main>
   </div>
+  <footer id="app-footer">
+    <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
+  </footer>
 </template>
 
 <script>
+import { ref } from 'vue'
 import Question from './components/Question.vue'
 import Result from './components/Result.vue'
 import data from './data.json'
@@ -29,22 +28,30 @@ export default {
     Result,
   },
 
-  data: () => ({
-    questions,
-    currQuestion: 0,
-    isCorrect: false,
-    isResponded: false,
-  }),
+  setup() {
+    const questions = ref(data.questions)
+    const currQuestion = ref(0)
+    const isCorrect = ref(false)
+    const isResponded = ref(false)
 
-  methods: {
-    displayResult(isCorrect) {
-      this.isCorrect = isCorrect
-      this.isResponded = true
-    },
-    getNextQuestion() {
-      this.currQuestion = (this.currQuestion + 1) % this.questions.length
-      this.isResponded = false
-    },
+    const displayResult = (correct) => {
+      isCorrect.value = Boolean(correct)
+      isResponded.value = true
+    }
+
+    const getNextQuestion = () => {
+      currQuestion.value = (currQuestion.value + 1) % questions.value.length
+      isResponded.value = false
+    }
+
+    return {
+      questions,
+      currQuestion,
+      isCorrect,
+      isResponded,
+      displayResult,
+      getNextQuestion,
+    }
   },
 }
 </script>
