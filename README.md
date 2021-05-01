@@ -21,11 +21,11 @@
   <img src="https://img.shields.io/github/license/juliolmuller/super-quiz?labelColor=000000&color=396afc" alt="Project License" />
 </p>
 
-![Application snapshot](./src/assets/app-overview.jpg)
+![Application snapshot](./.github/app-overview.jpg)
 
 Application developed during [Cod3r's official Vue.js course](https://www.udemy.com/course/vue-js-completo/), on Udemy, in order to create a funny and good-looking tool with Vue.js animations API (static data for the questions).
 
-[Check out the application running!](https://juliolmuller.github.io/super-quiz/)
+[Check out the application running!](https://super-quiz.vercel.app//)
 
 ## :trophy: Lessons Learned
 
@@ -34,7 +34,7 @@ Application developed during [Cod3r's official Vue.js course](https://www.udemy.
 ## :rocket: Technologies & Resources
 
 **Frontend:**
-- Vue.js 2
+- Vue.js 2 (updated to version 3)
 
 **Development:**
 - Visual Studio Code
@@ -46,7 +46,7 @@ Make sure to have **Node.js 10+** installed in your machine and its **npm** avai
 
 ```bash
 $ npm install     # Download dependencies
-$ npm start       # Run development server
+$ npm run serve   # Run development server
 $ npm run build   # Build files for production
 ```
 
