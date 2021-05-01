@@ -1,12 +1,12 @@
 {
   "name": "super-quiz",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "license": "MIT",
   "author": "Julio L. Muller",
   "scripts": {
     "start": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --dest docs --modern",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -22,25 +22,6 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.17.0",
     "eslint-plugin-vue": "^7.4.1"
-  },
-  "babel": {
-    "presets": [
-      "@vue/cli-plugin-babel/preset"
-    ]
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "@lacussoft"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
   },
   "browserslist": [
     "> 1%",
