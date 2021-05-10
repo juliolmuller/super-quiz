@@ -4,8 +4,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/vue3-essential',
-    '@lacussoft',
+    'lacussoft',
+    'lacussoft/vue',
   ],
   ignorePatterns: [
     'public/*',
