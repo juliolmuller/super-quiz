@@ -1,6 +1,7 @@
 <template>
   <div ref="card" class="question">
     <span>{{ question.text }}</span>
+
     <div class="answers">
       <div
         class="answer"
@@ -19,6 +20,7 @@
 import { ref } from 'vue'
 
 export default {
+  name: 'Question',
 
   props: {
     question: {

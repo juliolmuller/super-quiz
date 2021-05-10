@@ -5,6 +5,7 @@
       <p class="text" v-if="correct"> Resposta correta!</p>
       <p class="text" v-else>Resposta errada</p>
     </div>
+
     <button :class="{ wrong: !correct }" @click="$emit('next')">
       Próxima Pergunta &gt;
     </button>
@@ -13,6 +14,7 @@
 
 <script>
 export default {
+  name: 'Result',
 
   props: {
     correct: {

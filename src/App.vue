@@ -2,6 +2,7 @@
   <header id="app-header">
     <h1>Super Quiz</h1>
   </header>
+
   <div class="wrapper">
     <main id="app-main">
       <transition name="flip" mode="out-in">
@@ -10,6 +11,7 @@
       </transition>
     </main>
   </div>
+
   <footer id="app-footer">
     <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
   </footer>
@@ -22,6 +24,7 @@ import Result from './components/Result.vue'
 import data from './data.json'
 
 export default {
+  name: 'App',
 
   components: {
     Question,
