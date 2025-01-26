@@ -1,13 +1,14 @@
 {
   "name": "super-quiz",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "private": true,
   "license": "MIT",
   "author": "Julio L. Muller",
   "homepage": "https://super-quiz.vercel.app/",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.5.13"
