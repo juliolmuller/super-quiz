@@ -1,6 +1,6 @@
 {
   "name": "super-quiz",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "license": "MIT",
   "author": "Julio L. Muller",
@@ -14,8 +14,8 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^5.2.2",
     "rollup-plugin-analyzer": "^4.0.0",
-    "vite": "^6.0.5"
+    "vite": "^6.2.2"
   }
 }
