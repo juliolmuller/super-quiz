@@ -1,20 +1,8 @@
-<template>
-  <div class="result" :class="{ wrong: !correct }">
-    <div class="message">
-      <p class="icon">{{ correct ? '✔' : '❌' }}</p>
-      <p class="text" v-if="correct"> Resposta correta!</p>
-      <p class="text" v-else>Resposta errada</p>
-    </div>
-
-    <button :class="{ wrong: !correct }" @click="$emit('next')">
-      Próxima Pergunta &gt;
-    </button>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'Result',
+
+  emits: ['next'],
 
   props: {
     correct: {
@@ -22,8 +10,20 @@ export default {
       required: true,
     },
   },
-}
+};
 </script>
+
+<template>
+  <div class="result" :class="{ wrong: !correct }">
+    <div class="message">
+      <p class="icon">{{ correct ? '✔' : '❌' }}</p>
+      <p v-if="correct" class="text">Resposta correta!</p>
+      <p v-else class="text">Resposta errada</p>
+    </div>
+
+    <button :class="{ wrong: !correct }" @click="$emit('next')">Próxima Pergunta &gt;</button>
+  </div>
+</template>
 
 <style scoped>
 .result {
@@ -41,8 +41,8 @@ export default {
 }
 
 .result.wrong {
-  background-color: #ED213A;
-  background: linear-gradient(to top, #93291E, #ED213A);
+  background-color: #ed213a;
+  background: linear-gradient(to top, #93291e, #ed213a);
 }
 
 .result button {
@@ -57,12 +57,13 @@ export default {
   font-weight: 600;
 }
 
-.result button:hover, .result button:focus {
+.result button:hover,
+.result button:focus {
   background-color: #ddd;
   cursor: pointer;
 }
 
 .result.wrong button {
-  color: #93291E;
+  color: #93291e;
 }
 </style>
