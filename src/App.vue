@@ -1,27 +1,9 @@
-<template>
-  <header id="app-header">
-    <h1>Super Quiz</h1>
-  </header>
-
-  <div class="wrapper">
-    <main id="app-main">
-      <transition name="flip" mode="out-in">
-        <Result :correct="isCorrect" @next="getNextQuestion" v-if="isResponded" />
-        <Question :question="questions[currQuestion]" @response="displayResult" v-else />
-      </transition>
-    </main>
-  </div>
-
-  <footer id="app-footer">
-    <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
-  </footer>
-</template>
-
 <script>
-import { ref } from 'vue'
-import Question from './components/Question.vue'
-import Result from './components/Result.vue'
-import data from './data.json'
+import { ref } from 'vue';
+
+import Question from './components/Question.vue';
+import Result from './components/Result.vue';
+import data from './data.json';
 
 export default {
   name: 'App',
@@ -32,19 +14,19 @@ export default {
   },
 
   setup() {
-    const questions = ref(data.questions)
-    const currQuestion = ref(0)
-    const isCorrect = ref(false)
-    const isResponded = ref(false)
+    const questions = ref(data.questions);
+    const currQuestion = ref(0);
+    const isCorrect = ref(false);
+    const isResponded = ref(false);
 
-    const displayResult = (correct) => {
-      isCorrect.value = Boolean(correct)
-      isResponded.value = true
+    function displayResult(correct) {
+      isCorrect.value = Boolean(correct);
+      isResponded.value = true;
     }
 
-    const getNextQuestion = () => {
-      currQuestion.value = (currQuestion.value + 1) % questions.value.length
-      isResponded.value = false
+    function getNextQuestion() {
+      currQuestion.value = (currQuestion.value + 1) % questions.value.length;
+      isResponded.value = false;
     }
 
     return {
@@ -54,17 +36,36 @@ export default {
       isResponded,
       displayResult,
       getNextQuestion,
-    }
+    };
   },
-}
+};
 </script>
+
+<template>
+  <header id="app-header">
+    <h1>Super Quiz</h1>
+  </header>
+
+  <div class="wrapper">
+    <main id="app-main">
+      <transition name="flip" mode="out-in">
+        <Result v-if="isResponded" :correct="isCorrect" @next="getNextQuestion" />
+        <Question v-else :question="questions[currQuestion]" @response="displayResult" />
+      </transition>
+    </main>
+  </div>
+
+  <footer id="app-footer">
+    <span>Todos os direitors reservados &copy; 2020 LacusSoft</span>
+  </footer>
+</template>
 
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #FFF;
+  color: #fff;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -72,7 +73,9 @@ body {
   background: linear-gradient(to right, rgb(0, 0, 70), rgb(28, 181, 224));
 }
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
 }
 
@@ -123,13 +126,21 @@ html, body, #app {
 }
 
 @keyframes flip-out {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(90deg); }
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(90deg);
+  }
 }
 
 @keyframes flip-in {
-  from { transform: rotateY(90deg); }
-  to { transform: rotateY(0deg); }
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
 }
 
 .flip-enter-active {

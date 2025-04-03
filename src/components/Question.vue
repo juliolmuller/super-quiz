@@ -1,26 +1,10 @@
-<template>
-  <div ref="card" class="question">
-    <span>{{ question.text }}</span>
-
-    <div class="answers">
-      <div
-        class="answer"
-        v-for="(answer, index) in question.answers"
-        :key="index"
-        @click="$emit('response', answer.correct)"
-      >
-        <span class="alternative">{{ alternatives[index] }}</span>
-        <span class="text">{{ answer.text }}</span>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 export default {
   name: 'Question',
+
+  emits: ['response'],
 
   props: {
     question: {
@@ -32,8 +16,26 @@ export default {
   setup: () => ({
     alternatives: ref([...'abcdefghij']),
   }),
-}
+};
 </script>
+
+<template>
+  <div ref="card" class="question">
+    <span>{{ question.text }}</span>
+
+    <div class="answers">
+      <div
+        v-for="(answer, index) in question.answers"
+        :key="index"
+        class="answer"
+        @click="$emit('response', answer.correct)"
+      >
+        <span class="alternative">{{ alternatives[index] }}</span>
+        <span class="text">{{ answer.text }}</span>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .question {
@@ -69,7 +71,8 @@ export default {
   font-size: 2rem;
 }
 
-.answer:hover, .answer:focus {
+.answer:hover,
+.answer:focus {
   background: darkblue;
   cursor: pointer;
 }
